@@ -99,3 +99,29 @@ const HomePage: React.FC = () => {
 };
 
 export default HomePage;
+const products = [
+  {
+    id: 1,
+    name: "Custom Evo 8 Poster",
+    price: 20,
+    image: "/poster1.jpg",
+  },
+  {
+    id: 2,
+    name: "Lag2Launch T-Shirt",
+    price: 25,
+    image: "/shirt1.jpg",
+  },
+];
+<div className="grid grid-cols-2 gap-4">
+  {products.map((product) => (
+    <div key={product.id} className="border p-4">
+      <img src={product.image} alt={product.name} className="mb-2"/>
+      <h3 className="font-bold">{product.name}</h3>
+      <p>${product.price}</p>
+      <button className="bg-blue-500 text-white px-4 py-2 mt-2 rounded">
+        Buy Now
+      </button>
+    </div>
+  ))}
+</div>
